@@ -1,0 +1,44 @@
+* {
+    /* el astericsco es el selector uiversal */
+    margin: 3px;
+    padding: 2px;
+    box-sizing: border-box border-box;
+}
+
+/* las etiquetas se invocan con su nombre*/
+p {
+    color: #FF0000;
+}
+
+div {
+    border-color: #00ff00;
+    border: 8px solid #00ff00;
+}
+
+/*las clases se afectan a los elementos que contengan la misma clase*/
+
+.clase_caja {
+    border: 8px solid #e8ac09;
+    background-color: #07bbdf;
+}
+
+.clase-parrafo {
+    color: black;
+}
+
+/* los id afectan a los elementos especificos por su id */
+
+#fotografia {
+    border: 8px solid #e809bf;
+    width: 300px;
+}
+
+#sixSeven {
+    border: 10px solid blue;
+    width: 200px;
+}
+
+#camara {
+    border: 10px solid red;
+    width: 1000px;
+}

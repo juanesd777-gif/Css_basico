@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Efectos Hover en Imágenes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            padding: 40px;
+            background-color: #121212;
+            color: white;
+        }
+
+        .tarjeta {
+            text-align: center;
+        }
+
+        /* Contenedor base para recortar desbordes */
+        .contenedor-img {
+            width: 250px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .contenedor-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s ease;
+            /* Hace que el efecto sea suave */
+        }
+
+        /* --- EFECTO 1: Zoom suave --- */
+        .efecto-zoom:hover img {
+            transform: scale(1.15);
+        }
+
+        /* --- EFECTO 2: Blanco y negro a Color + Elevación --- */
+        .efecto-color {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .efecto-color img {
+            filter: grayscale(100%);
+        }
+
+        .efecto-color:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 255, 200, 0.4);
+        }
+
+        .efecto-color:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* --- EFECTO 3: Rotación y Zoom --- */
+        .efecto-rotar:hover img {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        /* --- EFECTO 4: Texto oculto que aparece --- */
+        .texto-oculto {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .efecto-texto:hover .texto-oculto {
+            opacity: 1;
+        }
+
+        .efecto-texto:hover img {
+            filter: blur(3px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tarjeta">
+        <div class="contenedor-img efecto-zoom">
+            <img src="./imagenes/67.jpg" alt="Paisaje">
+        </div>
+        <p>1. Zoom</p>
+    </div>
+
+    <div class="tarjeta">
+        <div class="contenedor-img efecto-color">
+            <img src="./imagenes/67.jpg" alt="Ciudad">
+        </div>
+        <p>2. Color + Brillo</p>
+    </div>
+
+    <div class="tarjeta">
+        <div class="contenedor-img efecto-rotar">
+            <img src="./imagenes/67.jpg" alt="Naturaleza">
+        </div>
+        <p>3. Giro dinámico</p>
+    </div>
+
+    <divs class="tarjeta">
+        <div class="contenedor-img efecto-texto">
+            <img src="./imagenes/67.jpg" alt="Arquitectura">
+            <div class="texto-oculto">¡Ver detalles!</div>
+        </div>
+        <p>4. Texto superpuesto</p>
+        </div>
+
+</body>
+
+</html>
